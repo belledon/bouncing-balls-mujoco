@@ -7,8 +7,6 @@ A Jupyter notebook that infers the physical properties of a bouncing ball from n
 - **Julia 1.10 or newer.** Tested on 1.10, 1.11, 1.12 and 1.13, on macOS (Apple silicon) and Linux (x86_64).
 - **Jupyter**, either JupyterLab/Notebook or the VS Code Jupyter extension.
 
-No Python packages and no GPU are needed.
-
 ### Installing Julia and Jupyter with Homebrew
 
 On macOS, both come from Homebrew:
