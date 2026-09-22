@@ -4,19 +4,20 @@ A Jupyter notebook that infers the physical properties of a bouncing ball from n
 
 ## Requirements
 
-- **Julia 1.10 or newer.** Tested on 1.10, 1.11 and 1.12, on macOS (Apple silicon) and Linux (x86_64).
+- **Julia 1.10 or newer.** Tested on 1.10, 1.11, 1.12 and 1.13, on macOS (Apple silicon) and Linux (x86_64).
 - **Jupyter**, either JupyterLab/Notebook or the VS Code Jupyter extension.
 
 No Python packages and no GPU are needed.
 
-## Install
+### Installing Julia and Jupyter with Homebrew
 
-Clone the repository:
+On macOS, both come from Homebrew:
 
 ```bash
-git clone git@github.com:maxsiegel/bouncing-balls-mujoco.git
-cd bouncing-balls-mujoco
+brew install julia jupyterlab
 ```
+
+## Install
 
 Register a Julia kernel with Jupyter. This is a one-time, per-machine step, and is separate from the notebook's own environment:
 
@@ -24,7 +25,7 @@ Register a Julia kernel with Jupyter. This is a one-time, per-machine step, and 
 julia -e 'using Pkg; Pkg.add("IJulia"); using IJulia; installkernel("Julia")'
 ```
 
-Install the notebook's dependencies:
+Then, from the repository directory, install the notebook's dependencies:
 
 ```bash
 julia --project=. -e 'using Pkg; Pkg.instantiate()'
@@ -50,7 +51,7 @@ Then run the cells top to bottom. The first cell activates the environment in th
 
 `Project.toml` lists the dependencies and their compatible versions.
 
-`Manifest-v1.12.toml` pins exact versions, and is only used by Julia 1.12. On any other version, Julia ignores it and resolves versions from `Project.toml` instead, writing a local `Manifest.toml`, which is git-ignored. In testing, 1.10 and 1.11 resolved to the same package versions as the pinned manifest.
+`Manifest-v1.12.toml` pins exact versions, and is only used by Julia 1.12. On any other version, Julia ignores it and resolves versions from `Project.toml` instead, writing a local `Manifest.toml`, which is git-ignored. In testing, 1.10, 1.11 and 1.13 resolved to the same package versions as the pinned manifest.
 
 ## Troubleshooting
 
